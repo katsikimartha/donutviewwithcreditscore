@@ -41,6 +41,18 @@ class MainActivity : AppCompatActivity() {
                 is Unknown -> {}
             }
         })
+
+        viewModel.totalScore.observe(this, { score ->
+            binding.textviewOutOf.text = getString(R.string.out_of, score.toString())
+        })
+
+        viewModel.creditScore.observe(this, { score ->
+            binding.textviewCreditScore.text = score.toString()
+        })
+
+        viewModel.creditScorePercentage.observe(this, { score ->
+            binding.progressBarCreditScore.progress = score
+        })
     }
 
 }

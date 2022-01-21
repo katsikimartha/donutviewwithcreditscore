@@ -15,6 +15,14 @@ import javax.inject.Inject
 
 class MainViewModel @Inject constructor(private val getCreditScoreUseCase: GetCreditScoreUseCase): ViewModel() {
 
+    private val _totalScore: MutableLiveData<Int> = MutableLiveData()
+    val totalScore: LiveData<Int>
+        get() = _totalScore
+
+    private val _creditScorePercentage: MutableLiveData<Int> = MutableLiveData()
+    val creditScorePercentage: LiveData<Int>
+        get() = _creditScorePercentage
+
     private val _creditScore: MutableLiveData<Int> = MutableLiveData()
     val creditScore: LiveData<Int>
         get() = _creditScore
@@ -36,7 +44,8 @@ class MainViewModel @Inject constructor(private val getCreditScoreUseCase: GetCr
 
     @VisibleForTesting(otherwise = VisibleForTesting.PRIVATE)
     private fun handleFetchedData(data: CreditScoreData) {
-        val totalScore = data.creditReportInfo.maxScoreValue
-        _creditScore.value = (data.creditReportInfo.score * 100)/ totalScore
+        _totalScore.value = data.creditReportInfo.maxScoreValue
+        _creditScore.value = data.creditReportInfo.score
+        _creditScorePercentage.value = (data.creditReportInfo.score * 100) / data.creditReportInfo.maxScoreValue
     }
 }

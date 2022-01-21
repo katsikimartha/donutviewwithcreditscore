@@ -20,24 +20,63 @@
             android:layout_height="0dp"
             android:max="100"
             android:progress="100"
-            android:thickness="6dp"
-            android:indeterminateTint="@color/black"
+            android:padding="4dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle"
+            tools:progress="100"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"/>
 
         <ProgressBar
+            android:id="@+id/progress_bar_credit_score"
             android:layout_width="0dp"
             android:layout_height="0dp"
             android:max="100"
-            android:padding="32dp"
-            android:thickness="6dp"
-            android:progress="@{viewModel.creditScore}"
-            android:indeterminateTint="@android:color/holo_orange_light"
+            android:padding="24dp"
+            android:indeterminateOnly="false"
+            android:progressDrawable="@drawable/circle_progress"
+            tools:progress="60"
             app:layout_constraintTop_toTopOf="@id/progress_bar_total_Score"
             app:layout_constraintBottom_toBottomOf="@id/progress_bar_total_Score"
             app:layout_constraintStart_toStartOf="@id/progress_bar_total_Score"
             app:layout_constraintEnd_toEndOf="@id/progress_bar_total_Score"/>
+
+        <TextView
+            android:id="@+id/textview_your_credit_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:text="@string/your_credit_score_is"
+            android:gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/progress_bar_credit_score"
+            app:layout_constraintStart_toStartOf="@id/progress_bar_credit_score"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.4" />
+
+        <TextView
+            android:id="@+id/textview_credit_score"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:textSize="32sp"
+            tools:text="540"
+            android:layout_margin="16dp"
+            android:textColor="@android:color/holo_orange_light"
+            app:layout_constraintEnd_toEndOf="@id/progress_bar_credit_score"
+            app:layout_constraintStart_toStartOf="@id/progress_bar_credit_score"
+            app:layout_constraintTop_toBottomOf="@id/textview_your_credit_score" />
+
+        <TextView
+            android:id="@+id/textview_out_of"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="16dp"
+            android:textColor="@android:color/holo_orange_light"
+            app:layout_constraintEnd_toEndOf="@id/progress_bar_credit_score"
+            app:layout_constraintStart_toStartOf="@id/progress_bar_credit_score"
+            app:layout_constraintTop_toBottomOf="@id/textview_credit_score" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
