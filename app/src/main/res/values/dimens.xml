@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="margin_small">4dp</dimen>
+    <dimen name="margin_medium">8dp</dimen>
+    <dimen name="margin_large">16dp</dimen>
+    <dimen name="margin_xl">24dp</dimen>
+    <dimen name="margin_xxl">36dp</dimen>
+    <dimen name="margin_xxxl">48dp</dimen>
+    <dimen name="margin_xxxxl">60dp</dimen>
+    <dimen name="menu_item_height">64dp</dimen>
+
+    <dimen name="padding_xsmall">4dp</dimen>
+    <dimen name="padding_small">8dp</dimen>
+    <dimen name="padding_default">16dp</dimen>
+    <dimen name="padding_large">24dp</dimen>
+    <dimen name="padding_xlarge">32dp</dimen>
+    <dimen name="padding_xxlarge">48dp</dimen>
+
+    <dimen name="text_small">8sp</dimen>
+    <dimen name="text_medium">12sp</dimen>
+    <dimen name="text_medium_large">14sp</dimen>
+    <dimen name="text_large">16sp</dimen>
+    <dimen name="text_xl">24sp</dimen>
+    <dimen name="text_xxl">36sp</dimen>
+    <dimen name="text_xxxl">48sp</dimen>
+</resources>
