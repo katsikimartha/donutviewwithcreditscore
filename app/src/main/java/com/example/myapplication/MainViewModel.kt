@@ -27,12 +27,14 @@ class MainViewModel @Inject constructor(private val getCreditScoreUseCase: GetCr
             try {
                 val data = getCreditScoreUseCase.execute(Unit)
                 mainUIModel.apply {
-                    creditScore = data.creditReportInfo.score
+                    creditScore = data.creditReportInfo.score.toString()
+                    totalScore = data.creditReportInfo.maxScoreValue.toString()
                     creditScorePercentage = (data.creditReportInfo.score * 100) / data.creditReportInfo.maxScoreValue
-                    totalScore = context.getString(R.string.out_of, data.creditReportInfo.maxScoreValue.toString())
                 }
             } catch (error: Exception) {
-                _exception.value = if (error is CustomException) { error } else Unknown(null)
+                _exception.value = if (error is CustomException) {
+                    error
+                } else Unknown(null)
             }
         }
     }

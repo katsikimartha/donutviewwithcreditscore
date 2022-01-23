@@ -12,6 +12,7 @@
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:id="@+id/activity_main_root"
         tools:context=".MainActivity">
 
         <ProgressBar
@@ -33,16 +34,18 @@
             android:id="@+id/progress_bar_credit_score"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:indeterminateOnly="false"
             android:max="100"
             android:padding="@dimen/padding_xxlarge"
-            android:indeterminateOnly="false"
-            android:progressDrawable="@drawable/circle_progress"
-            tools:progress="60"
             android:progress="@{viewModel.mainUIModel.creditScorePercentage}"
-            app:layout_constraintTop_toTopOf="@id/progress_bar_total_Score"
+            android:progressDrawable="@drawable/circle_progress"
             app:layout_constraintBottom_toBottomOf="@id/progress_bar_total_Score"
+            app:layout_constraintEnd_toEndOf="@id/progress_bar_total_Score"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="@id/progress_bar_total_Score"
-            app:layout_constraintEnd_toEndOf="@id/progress_bar_total_Score"/>
+            app:layout_constraintTop_toTopOf="@id/progress_bar_total_Score"
+            app:layout_constraintVertical_bias="0.0"
+            tools:progress="60" />
 
         <TextView
             android:id="@+id/textview_your_credit_score"
@@ -50,7 +53,7 @@
             android:layout_height="wrap_content"
             android:text="@string/your_credit_score_is"
             android:gravity="center"
-            android:textSize="@dimen/text_large"
+            android:textSize="@dimen/text_xl"
             android:textColor="@android:color/black"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="@id/progress_bar_credit_score"
@@ -63,7 +66,7 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:gravity="center"
-            android:textSize="@dimen/text_xxl"
+            android:textSize="@dimen/text_xxxl"
             tools:text="300"
             android:text="@{viewModel.mainUIModel.creditScore}"
             android:layout_margin="@dimen/margin_large"
@@ -78,9 +81,9 @@
             android:layout_height="wrap_content"
             android:gravity="center"
             tools:text="out of 700"
-            android:text="@{viewModel.mainUIModel.totalScore}"
+            android:text="@{@string/out_of(viewModel.mainUIModel.totalScore)}"
             android:layout_marginTop="@dimen/margin_large"
-            android:textSize="@dimen/text_large"
+            android:textSize="@dimen/text_xl"
             android:textColor="@android:color/black"
             app:layout_constraintEnd_toEndOf="@id/progress_bar_credit_score"
             app:layout_constraintStart_toStartOf="@id/progress_bar_credit_score"

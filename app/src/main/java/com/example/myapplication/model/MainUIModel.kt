@@ -7,7 +7,7 @@ import com.example.myapplication.utils.ObservableDelegate
 
 class MainUIModel(
     private val _creditScorePercentage: Int = 0,
-    private val _creditScore: Int = 0,
+    private val _creditScore: String = "",
     private val _totalScore: String = ""
 ) : BaseObservable() {
 

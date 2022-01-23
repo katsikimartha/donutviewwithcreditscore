@@ -1,5 +1,7 @@
 <resources>
     <string name="app_name">My Application</string>
     <string name="your_credit_score_is">Your credit score is</string>
-    <string name="out_of">out_of %1s</string>
+    <string name="out_of">out of %s</string>
+    <string name="error_generic_message">Something went wrong, please try again</string>
+    <string name="error_connection_message">Connection failed, please try again later</string>
 </resources>
